@@ -195,7 +195,7 @@ $(document).ready(function($) {
 
 //  No UI Slider -------------------------------------------------------------------------------------------------------
 
-    if( $('.ui-slider').length > 0 ){
+/*    if( $('.ui-slider').length > 0 ){
         $('.ui-slider').each(function() {
             if( $("body").hasClass("rtl") ) var rtl = "rtl";
             else rtl = "ltr";
@@ -236,7 +236,7 @@ $(document).ready(function($) {
                 $(this).Link('upper').to( $(this).children('.values').children('.value-max'), null, wNumb({ decimals: 0 }));
             }
         });
-    }
+    }*/
 
 //  Calendar
 

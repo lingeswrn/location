@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Council Help</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body ng-app="councilHelpApp" ng-controller="homeController">
+    <div class="wrapper">
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">
+					<a href="#" class="logo">Logo</a>
+                                        <!--<img src="images/logo.jpg" class="img-responsive" alt="Fertinvest Logo" />-->
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="fert-body">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-9 no-padding">
+					<div id="map-holder"></div>
+				</div>
+				<div class="col-xs-12 col-sm-3 no-padding map-right">
+					<div class="map-search">					
+                                            <form name="searchForm">
+                                                <div class="col-xs-12 form-group">
+                                                    <select class="form-control" ng-change="chooseSearch(searchType)" ng-model="searchType">
+                                                        <option value="0">Search Option</option>
+                                                        <option value="1">Search By College</option>
+                                                        <option value="2">Search By District</option>
+                                                    </select>
+                                                </div>					
+                                                <div class="col-xs-12 form-group" ng-show="districtHolder">
+                                                    <select class="form-control" ng-change="chooseSearch(searchType)" ng-model="searchType">
+                                                        <option value="0">Choose District</option>
+                                                        <option value="1">Search By College</option>
+                                                        <option value="2">Search By District</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-12 form-group" ng-show="collegeHolder">
+                                                    <input ng-model="collegeName" class="form-control" placeholder="Enter College Name">
+                                                </div>					
+                                            </form>
+					</div>
+					<div class=""><!--map-res-header-->
+						<h2 class="result-header">Result</h2>
+					</div>					
+					<div class="map-res-info">
+						<h3>Company Name:</h3>
+						<p>ABCDEF</p>
+						<h3>Phone No.:</h3>
+						<p>xxx-xxx-xxxx</p>
+						<h3>Contact Person:</h3>
+						<p>ABCDEF</p>
+						<h3>Hectares:</h3>
+						<p>400</p>
+						<h3>Comments:</h3>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer>
+<p class="copyright">Copyright &copy; 2016 - fertinvest</p>
+</footer>
+
+<script src="js/angular.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAZZ3NtMC7VGqw8b5XejpleqfH4NMzSMxA"></script>
+
+<script src="controllers/app.js"></script>
+<script src="controllers/homeController.js"></script>
+<script>
+function initialize() {
+  var mapProp = {
+    center:new google.maps.LatLng(9.918991, 78.129000),
+    zoom:4,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("map-holder"),mapProp);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</body>
+</html>
