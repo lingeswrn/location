@@ -16,12 +16,12 @@ class Route extends Location{
     public function redirect(){
        if( $this->type == DISTRICTS ) {
            $districts = $this->getAllDistricts();
-		   $this->convertToJSON($districts);
+            $this->convertToJSON($districts);
        }
     }
 	
-	public function convertToJSON( $inputArray ){
-		echo  json_encode($inputArray);
-	}
+    public function convertToJSON( $inputArray ){
+            echo  json_encode($inputArray);
+    }
 }
 $route = new Route();

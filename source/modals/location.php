@@ -14,7 +14,12 @@ class Location extends DatabaseFunctions{
 			return $districts;
         }
         catch(Exception $e) {
-            $this->error = $e->getMessage();
+            $this->error[] = $e->getMessage();
         }
     }
+    
+    public function getAllCollegesByDistrict(){
+        
+    }
+            
 }
