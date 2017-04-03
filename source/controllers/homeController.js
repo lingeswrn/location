@@ -4,6 +4,7 @@ app.controller("homeController" , function($scope, $http){
         if( type === '2' ){
             $scope.districtHolder = true;
             $scope.collegeHolder = false;
+			
         }else if( type === '1' ){
             $scope.districtHolder = false;
             $scope.collegeHolder = true;
@@ -12,9 +13,8 @@ app.controller("homeController" , function($scope, $http){
     
     $scope.getAllColleges = function(){
         $http.post('modals/index.php',{type: 'districts'}).then( function(response){
-            console.log(response)
+			$scope.districts = response.data;
         });
-        //this.colleges = 
     };
     $scope.getAllColleges();
 });

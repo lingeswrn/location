@@ -44,10 +44,8 @@
                                                     </select>
                                                 </div>					
                                                 <div class="col-xs-12 form-group" ng-show="districtHolder">
-                                                    <select class="form-control" ng-change="chooseSearch(searchType)" ng-model="searchType">
-                                                        <option value="0">Choose District</option>
-                                                        <option value="1">Search By College</option>
-                                                        <option value="2">Search By District</option>
+                                                    <select class="form-control">
+                                                        <option value="val.district" ng-repeat="val in districts" ng-bind="val.district"></option>
                                                     </select>
                                                 </div>
                                                 <div class="col-xs-12 form-group" ng-show="collegeHolder">

@@ -9,8 +9,9 @@ class Location extends DatabaseFunctions{
     public function getAllDistricts(){
         try {
             $this->error = array();
-            $query = 'SELECT DISTINCT clg_district FROM '.COLLEGES;
-            print_r($this->SelectFromTable($query));
+            $query = 'SELECT DISTINCT clg_district as district FROM '.COLLEGES;
+			$districts = $this->SelectFromTable($query);
+			return $districts;
         }
         catch(Exception $e) {
             $this->error = $e->getMessage();
